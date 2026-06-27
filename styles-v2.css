@@ -751,9 +751,9 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
   content: "";
   position: absolute;
   inset: 0;
-  background: #6a0dad; /* True purple instead of pinkish mauve */
-  mix-blend-mode: color;
-  opacity: 0.8;
+  background: #9d4edd; /* A vibrant, attractive purple */
+  mix-blend-mode: multiply;
+  opacity: 0.85;
   pointer-events: none;
 }
 .loader-video {
