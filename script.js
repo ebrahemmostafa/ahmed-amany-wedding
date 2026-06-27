@@ -92,7 +92,7 @@
 // COUNTDOWN  (Arabic digits + bump on tick)
 // =====================================================
 (function () {
-  const target = new Date("2026-12-16T18:00:00").getTime();
+  const target = new Date("2026-07-09T19:00:00").getTime();
   const dEl = document.querySelector("[data-d]");
   const hEl = document.querySelector("[data-h]");
   const mEl = document.querySelector("[data-m]");
