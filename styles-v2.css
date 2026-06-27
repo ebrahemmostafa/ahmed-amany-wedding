@@ -37,7 +37,7 @@
 
 html {
   scroll-behavior: smooth;
-  direction: rtl;
+  direction: ltr;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -393,25 +393,25 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-xs);
   transition: transform 0.45s var(--ease-spring), box-shadow 0.45s ease;
-  text-align: right;
+  text-align: left;
   cursor: default;
 }
 
-/* Rose accent stripe on the right (RTL start side) */
+/* Rose accent stripe on the left (LTR start side) */
 .tl-card::before {
   content: "";
   position: absolute;
-  top: 0; right: 0;
+  top: 0; left: 0;
   width: 3px; height: 100%;
   background: linear-gradient(180deg, var(--rose) 0%, rgba(177,133,151,0.15) 100%);
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 0 0 10px;
 }
 
-/* Subtle rose shine top-left */
+/* Subtle rose shine top-right */
 .tl-card::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top: 0; right: 0;
   width: 100%; height: 60%;
   background: linear-gradient(160deg, rgba(177,133,151,0.06) 0%, transparent 60%);
   pointer-events: none;
@@ -427,7 +427,7 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
 .tl-num {
   position: absolute;
   bottom: -0.75rem;
-  left: 0.8rem;
+  right: 0.8rem;
   font-family: var(--font-display);
   font-size: 6rem;
   font-weight: 700;
@@ -682,7 +682,7 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
 .music-btn {
   position: fixed;
   bottom: 1.75rem;
-  right: 1.75rem; /* RTL-correct: right side */
+  left: 1.75rem; /* LTR-correct: left side */
   z-index: 50;
   width: 3.5rem; height: 3.5rem;
   border: 1px solid var(--border-mid);
@@ -898,7 +898,7 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
   display: flex;
   flex-direction: column;
   gap: 2.25rem;
-  text-align: right;
+  text-align: left;
 }
 
 /* Individual field wrapper */
@@ -922,8 +922,8 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
   appearance: none;
   resize: none;
   transition: border-color 0.35s ease, background 0.35s ease;
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
   line-height: 1.6;
   box-sizing: border-box;
 }
@@ -936,13 +936,13 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
 .rsvp-label {
   position: absolute;
   top: 1rem;
-  right: 0.1rem;
+  left: 0.1rem;
   font-family: var(--font-kufi);
   font-size: 0.88rem;
   color: var(--muted);
   pointer-events: none;
   transition: top 0.3s var(--ease-out), font-size 0.3s ease, color 0.3s ease;
-  transform-origin: right top;
+  transform-origin: left top;
 }
 
 /* Float label up when input has content or is focused */
@@ -1004,7 +1004,7 @@ button { font-family: inherit; border: none; background: none; padding: 0; }
 }
 .rsvp-submit-icon {
   flex-shrink: 0;
-  transform: rotate(180deg); /* RTL: arrow faces left */
+  transform: rotate(0deg); /* LTR: arrow faces right */
 }
 
 /* Success state */

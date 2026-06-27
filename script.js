@@ -99,9 +99,8 @@
   const sEl = document.querySelector("[data-s]");
   if (!dEl) return;
 
-  const AR = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
   function toAr(n) {
-    return String(n).padStart(2, "0").split("").map(d => AR[+d]).join("");
+    return String(n).padStart(2, "0");
   }
   function bump(el) {
     el.classList.remove("bump");
@@ -200,7 +199,7 @@
   const dots = slides.map((_, i) => {
     const d = document.createElement("button");
     d.className = "slider-dot";
-    d.setAttribute("aria-label", `صورة ${i + 1}`);
+    d.setAttribute("aria-label", `Image ${i + 1}`);
     d.addEventListener("click", () => goTo(i));
     dotsWrap.appendChild(d);
     return d;
@@ -278,8 +277,8 @@
 
   // ── Keyboard ─────────────────────────────────────────
   document.addEventListener("keydown", e => {
-    if (e.key === "ArrowLeft")  next(); // RTL: ← = forward
-    if (e.key === "ArrowRight") prev(); // RTL: → = backward
+    if (e.key === "ArrowLeft")  next(); // LTR: ← = backward
+    if (e.key === "ArrowRight") prev(); // LTR: → = forward
   });
 
   // ── Auto-play ─────────────────────────────────────────
@@ -355,7 +354,7 @@
 
     // Disable button during "send"
     submit.disabled = true;
-    submit.querySelector(".rsvp-submit-text").textContent = "جارٍ الإرسال…";
+    submit.querySelector(".rsvp-submit-text").textContent = "Sending...";
 
     // Simulate async send (replace with real fetch() when backend is ready)
     setTimeout(() => {
@@ -369,7 +368,7 @@
 
         // Personalise success message with name
         const titleEl = success.querySelector(".rsvp-success-title");
-        if (titleEl) titleEl.textContent = `وصلتنا رسالتك، ${name} 🌹`;
+        if (titleEl) titleEl.textContent = `We received your message, ${name} 🌹`;
 
         success.hidden = false;
         success.removeAttribute("hidden");
